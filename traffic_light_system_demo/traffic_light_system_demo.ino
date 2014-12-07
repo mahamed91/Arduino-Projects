@@ -26,8 +26,7 @@ void setup() {
 }
 
 void loop() {
- int state = digitalRead(button);
- if (state == HIGH && (millis() - changeTime) > 5000) {
+ if (digitalRead(button) == HIGH && (millis() - changeTime) > 5000) {
  changeLights();
  }
 }
@@ -40,7 +39,7 @@ void changeLights() {
  digitalWrite(carRedLED, HIGH);
  delay(1000); 
  digitalWrite(pedRedLED, LOW); 
- digitalWrite(pedGreenLED, HIGH); /
+ digitalWrite(pedGreenLED, HIGH); 
  delay(crossTime); // wait for preset time period
 
  // flash the ped green
